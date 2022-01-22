@@ -94,29 +94,27 @@ public class GameManager : MonoBehaviour
     }
     public void MoveRowUp()
     {
-
-        return;
         switch (mainVideoRow)
         {
             case 1:
                 setActiveRow(2);
+                mainVideoRow = 2;
                 break;
             case 2:
                 setActiveRow(3);
+                mainVideoRow = 3;
                 break;
             case 3:
-                setActiveRow(2);
                 setActiveRow(1);
-                mainVideoRow = 1 - 1;
+                mainVideoRow = 1;
                 break;
             default:
                 break;
         }
-        mainVideoRow++;
+        Debug.Log("main row" + mainVideoRow);
     }
     public void MoveRowDown()
     {
-        Debug.Log("moving Gamemanager");
         switch (mainVideoRow)
         {
             case 1:
@@ -125,14 +123,16 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 setActiveRow(1);
+                mainVideoRow = 1;
                 break;
             case 3:
                 setActiveRow(2);
+                mainVideoRow = 2;
                 break;
             default:
                 break;
         }
-        mainVideoRow--;
+        Debug.Log("main row" + mainVideoRow);
     }
 
     public void MoveRowLeft()
